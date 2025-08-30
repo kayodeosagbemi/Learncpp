@@ -15,5 +15,6 @@ int main() {
 	myReading.setDiastolic(diastolic);
 	myReading.setPulse(pulse);
 	cout << "You entered: " << myReading.toString() << endl;
+	myReading.persist();
 	return 0;
 }

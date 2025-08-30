@@ -16,14 +16,23 @@ public:
 	}
 	void setSystolic(int systolicValue) {
 		// Add validation here if needed
+		if (systolicValue < 0) {
+			systolicValue = 0; // or throw an exception
+		}
 		systolic = systolicValue;
 	}
 	void setDiastolic(int diastolicValue) {
 		// Add validation here if needed
+		if (diastolicValue < 0) {
+			diastolicValue = 0; // or throw an exception
+		}
 		diastolic = diastolicValue;
 	}
 	void setPulse(int pulseValue) {
 		// Add validation here if needed
+		if (pulseValue < 0) {
+			pulseValue = 0; // or throw an exception
+		}
 		pulse = pulseValue;
 	}
 	int getSystolic() {
@@ -37,6 +46,11 @@ public:
 	}
 	string toString() {
 		return "Systolic: " + to_string(systolic) + ", Diastolic: " + to_string(diastolic) + ", Pulse: " + to_string(pulse);
+	}
+
+	void persist() {
+		// Code to save the reading to a file or database
+		cout << "Persisting reading: " << toString() << endl;
 	}
 private:
 	int systolic;
